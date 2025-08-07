@@ -8,7 +8,10 @@ const Products = () => {
     const [products, setProducts] = useState(allProducts);
 
     const handleAddNewProduct = (newProduct) => {
-        setProducts([...products, newProduct]);
+        const randomCode = Math.random();
+        const productWithCode = { ...newProduct, code: randomCode };
+
+        setProducts([...products, productWithCode]);
     }
 
     return (
@@ -27,7 +30,7 @@ const Products = () => {
                 ))}
             </Row>
             <Row md={4}>
-                <ProductForm onAddNewProduct={handleAddNewProduct}/>
+                <ProductForm onAddNewProduct={handleAddNewProduct} />
             </Row>
         </Container>
     );
