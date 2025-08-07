@@ -3,15 +3,21 @@ import { allProducts } from "../data/products";
 import ProductItem from "../productItem/ProductItem";
 import { Col, Container, Row } from "react-bootstrap";
 import ProductForm from "../productForm/ProductForm";
+import ChangeDollar from "../changeDollar/ChangeDollar";
 
 const Products = () => {
     const [products, setProducts] = useState(allProducts);
+    const [dollar, setDollar] = useState(1);
 
     const handleAddNewProduct = (newProduct) => {
         const randomCode = Math.random();
         const productWithCode = { ...newProduct, code: randomCode };
 
         setProducts([...products, productWithCode]);
+    }
+
+    const handleChangeDollar = (newPrice) => {
+        setDollar(newPrice);
     }
 
     return (
@@ -23,7 +29,7 @@ const Products = () => {
                         <ProductItem
                             code={product.code}
                             name={product.name}
-                            price={product.price}
+                            price={product.price * dollar}
                             isAvailable={product.isAvailable}
                         />
                     </Col>
@@ -31,6 +37,7 @@ const Products = () => {
             </Row>
             <Row md={4}>
                 <ProductForm onAddNewProduct={handleAddNewProduct} />
+                <ChangeDollar dollar={dollar} onChangeDollar={handleChangeDollar}/>
             </Row>
         </Container>
     );

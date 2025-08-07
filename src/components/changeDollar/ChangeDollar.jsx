@@ -1,8 +1,7 @@
-const ChangeDollar = ({ dollar, onSetNewDollar }) => {
+const ChangeDollar = ({ dollar, onChangeDollar }) => {
   const handleDollarChange = (e) => {
-    onSetNewDollar(e.target.value);
+    onChangeDollar(e.target.value);
   };
-
 
   return (
     <div>
