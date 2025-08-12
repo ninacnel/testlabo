@@ -24,7 +24,14 @@ const Products = () => {
     return (
         <Container>
             <h1>List of Products</h1>
-            <Row>
+            <Row md={4} className="d-flex align-items-center flex-column">
+                <ProductForm onAddNewProduct={handleAddNewProduct} />
+                <div className="d-flex flex-column">
+                    <Button onClick={() => setShowDollar(!showDollar)}>Show dollar form</Button>
+                    {showDollar && <ChangeDollar dollar={dollar} onChangeDollar={handleChangeDollar} />}
+                </div>
+            </Row>
+            <Row className="mt-5">
                 {products.map((product) => (
                     <Col md={4} key={product.code} className='mb-2'>
                         <ProductItem
@@ -35,13 +42,6 @@ const Products = () => {
                         />
                     </Col>
                 ))}
-            </Row>
-            <Row md={4} className="d-flex align-items-center">
-                <ProductForm onAddNewProduct={handleAddNewProduct} />
-                <div className="d-flex flex-column">
-                    <Button onClick={() => setShowDollar(!showDollar)}>Show dollar form</Button>
-                    {showDollar && <ChangeDollar dollar={dollar} onChangeDollar={handleChangeDollar} />}
-                </div>
             </Row>
         </Container>
     );
