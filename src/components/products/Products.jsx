@@ -38,8 +38,10 @@ const Products = () => {
             </Row>
             <Row md={4} className="d-flex align-items-center">
                 <ProductForm onAddNewProduct={handleAddNewProduct} />
-                <Button onClick={() => setShowDollar(!showDollar)}>Show dollar form</Button>
-                {showDollar && <ChangeDollar dollar={dollar} onChangeDollar={handleChangeDollar} />}
+                <div className="d-flex flex-column">
+                    <Button onClick={() => setShowDollar(!showDollar)}>Show dollar form</Button>
+                    {showDollar && <ChangeDollar dollar={dollar} onChangeDollar={handleChangeDollar} />}
+                </div>
             </Row>
         </Container>
     );
