@@ -11,7 +11,7 @@ const Search = ({
             <Form.Label>Search {entity}:</Form.Label>
             <Form.Control
                 type={type}
-                placeholder={`Buscar ${entity}...`}
+                placeholder={`Search ${entity}...`}
                 onChange={onChange}
                 value={value}
             />
