@@ -26,7 +26,7 @@ const Products = () => {
             <h1>List of Products</h1>
             <Row md={4} className="d-flex align-items-center flex-column">
                 <ProductForm onAddNewProduct={handleAddNewProduct} />
-                <div className="d-flex flex-column">
+                <div className="d-flex flex-column mt-2 mb-2">
                     <Button onClick={() => setShowDollar(!showDollar)}>Show dollar form</Button>
                     {showDollar && <ChangeDollar dollar={dollar} onChangeDollar={handleChangeDollar} />}
                 </div>
