@@ -26,7 +26,7 @@ const App = () => {
           <Route element={<Protected isSignedIn={loggedIn} />}>
             <Route path='/products/*' element={<Products onLogout={handleLogout} />}/>
           </Route>
-          <Route path='*' element={<ErrorNotFound />} />
+          <Route path='*' element={<ErrorNotFound/>} />
         </Routes>
       </BrowserRouter>
     </div>

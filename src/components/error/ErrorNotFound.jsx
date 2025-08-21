@@ -1,18 +1,12 @@
-import { Button, Row } from 'react-bootstrap'
-import { useNavigate } from 'react-router'
+import { Row } from 'react-bootstrap'
 
 const ErrorNotFound = () => {
-    const navigate = useNavigate()
 
-    const goBack = () => {
-        navigate("/library")
-    }
 
     return (
-        <Row>
-            <h1>Ups! Sitio no encontrado</h1>
-            <p>Haz click en el botón para regresar</p>
-            <Button className='w-25' onClick={goBack}>Regresar </Button>
+        <Row className='mt-5'>
+            <h1>404</h1>
+            <p>Sitio no encontrado</p>
         </Row>
     )
 }
