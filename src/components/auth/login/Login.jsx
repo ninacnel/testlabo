@@ -54,6 +54,7 @@ const Login = ({ onLogin }) => {
         setErrors(initialErrors);
         setEmail('');
         setPassword('')
+        
         onLogin()
         navigate('/products')
     }
@@ -61,7 +62,7 @@ const Login = ({ onLogin }) => {
         <Card className="w-25 mt-5 mx-3 p-3 px-5 shadow">
             <Card.Body>
                 <Row className="mb-2">
-                    <h5>¡Bienvenidos a Books Champion!</h5>
+                    <h5>Login</h5>
                 </Row>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup className="mb-4">
