@@ -4,13 +4,12 @@ import ProductItem from "../productItem/ProductItem";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import ProductForm from "../productForm/ProductForm";
 import ChangeDollar from "../../changeDollar/ChangeDollar";
-import { useNavigate } from "react-router";
 
 const Products = ({ onLogout }) => {
     const [products, setProducts] = useState(allProducts);
     const [dollar, setDollar] = useState(1);
     const [showDollar, setShowDollar] = useState(true);
-    
+
     const handleAddNewProduct = (newProduct) => {
         const randomCode = Math.random();
         const productWithCode = { ...newProduct, code: randomCode };
